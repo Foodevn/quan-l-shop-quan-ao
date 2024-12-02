@@ -57,7 +57,7 @@ namespace DataAccess.ClassDA
             command.Parameters.Add(IDPara).Value = sanPham.MaSP;
             command.Parameters.Add("@TenSP", SqlDbType.NVarChar, 35) .Value = sanPham.TenSP;
             command.Parameters.Add("@GiaBan", SqlDbType.Float) .Value = sanPham.GiaBan;
-            command.Parameters.Add("@GiamGia", SqlDbType.Float) .Value = sanPham.GiaBan;
+            command.Parameters.Add("@GiamGia", SqlDbType.Float) .Value = sanPham.GiamGia;
             command.Parameters.Add("@GiaNhap", SqlDbType.Float) .Value = sanPham.GiaNhap;
             command.Parameters.Add("@SLTon", SqlDbType.Int).Value = sanPham.SLTon;
             command.Parameters.Add("@NhaCungCap", SqlDbType.NVarChar, 35).Value = sanPham.NhaCungCap;

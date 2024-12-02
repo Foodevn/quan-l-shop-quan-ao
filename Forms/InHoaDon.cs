@@ -50,8 +50,8 @@ namespace Quan_ly_Shop_Quan_ao_1
 				if (chiTietHoaDon.MaHD.Contains(maHoaDon))
 				{
 					string tenSP = listSanPham.Find(x => x.MaSP == chiTietHoaDon.MaSP).TenSP;
-					string gia = chiTietHoaDon.SL.ToString() + " x " + chiTietHoaDon.GiaBan.ToString("N0") + " = " + (chiTietHoaDon.SL * chiTietHoaDon.GiaBan).ToString("N0")+" đ";
-					tong += chiTietHoaDon.SL * chiTietHoaDon.GiaBan;
+					string gia = chiTietHoaDon.SL.ToString() + " x " + (chiTietHoaDon.GiaBan/ chiTietHoaDon.SL).ToString("N0") + " = " + ( chiTietHoaDon.GiaBan).ToString("N0")+" đ";
+					tong +=  chiTietHoaDon.GiaBan;
 					them(tenSP, gia);
 
 				}

@@ -80,8 +80,11 @@ namespace Quan_ly_Shop_Quan_ao_1
 					{
 						btnDSSanPham.Visible = false;
 						buttonQuanLyNhanVien.Visible=false;
+						button1.Visible=false;
 						btnDoanhThu.Visible = false;
 						btnNhapHang.Visible = false;
+						button4.Visible=false;
+						button3.Visible=false;
 					}
 
 				}

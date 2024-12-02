@@ -34,3 +34,12 @@ C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy\BusinessLog\ob
 C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy\BusinessLog\obj\Debug\Business.F5BB8BF2.Up2Date
 C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy\BusinessLog\obj\Debug\BusinessLog.dll
 C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy\BusinessLog\obj\Debug\BusinessLog.pdb
+C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy - Copy (2)\BusinessLog\bin\Debug\BusinessLog.dll
+C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy - Copy (2)\BusinessLog\bin\Debug\BusinessLog.pdb
+C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy - Copy (2)\BusinessLog\bin\Debug\DataAccess.dll
+C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy - Copy (2)\BusinessLog\bin\Debug\DataAccess.pdb
+C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy - Copy (2)\BusinessLog\obj\Debug\BusinessLog.csproj.AssemblyReference.cache
+C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy - Copy (2)\BusinessLog\obj\Debug\BusinessLog.csproj.CoreCompileInputs.cache
+C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy - Copy (2)\BusinessLog\obj\Debug\Business.F5BB8BF2.Up2Date
+C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy - Copy (2)\BusinessLog\obj\Debug\BusinessLog.dll
+C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy - Copy (2)\BusinessLog\obj\Debug\BusinessLog.pdb

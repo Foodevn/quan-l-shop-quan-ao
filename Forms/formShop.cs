@@ -44,7 +44,7 @@ namespace quan_ly_shop_quan_ao
 			LoadSize();
 			LoadMauSac();
 			LoadSanPhamToListView();
-			
+
 		}
 		private void LoadMauSac()
 		{
@@ -76,13 +76,13 @@ namespace quan_ly_shop_quan_ao
 			{
 				ListViewItem item = lvDS.Items.Add(sp.MaSP);
 				item.SubItems.Add(sp.TenSP);
-				item.SubItems.Add(sp.GiaBan.ToString());
+				item.SubItems.Add(sp.GiaBan.ToString("N0"));
 				item.SubItems.Add(sp.SLTon.ToString());
 				string tenMauSac = listMauSac.Find(x => x.MaMau == sp.IDMau).TenMau;
 				item.SubItems.Add(tenMauSac);
 				string tenSize = listSize.Find(x => x.MaSize == sp.IDSize).TenSize;
 				item.SubItems.Add(tenSize);
-				
+
 			}
 			lvDS.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
 			lvDS.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
@@ -108,7 +108,7 @@ namespace quan_ly_shop_quan_ao
 			mtbSDT.Text = "";
 			txtDiaChi.Text = "";
 			lvChiTietDonhang.Items.Clear();
-			
+
 			txtTongTienHang.Text = "";
 			txtPhiGiaoHang.Text = "";
 			txtTongThanhToan.Text = "";
@@ -117,82 +117,11 @@ namespace quan_ly_shop_quan_ao
 			txtThueVAT.Text = "";
 			lbl_Tongtien.Text = "Không Đồng";
 			listDonHang.Clear();
+			SanPhamBL sanPhamBL = new SanPhamBL();
+			listSanPham = sanPhamBL.GetAll();
+			LoadlvDS(listSanPham);
 		}
-		//private void btnTimKiem_Click(object sender, EventArgs e)
-		//{
-		//	string searchText = txtTimKiem.Text.Trim().ToLower();
-		//	List<ListViewItem> ketQuaTimKiem = new List<ListViewItem>();
-		//	if (string.IsNullOrEmpty(searchText))
-		//	{
-		//		lvDS.Items.Clear();
-		//		LoadSanPhamToListView();
-		//		return;
-		//	}
-		//	foreach (ListViewItem item in lvDS.Items)
-		//	{
-		//		string maHang = item.SubItems[0].Text.ToLower();
-		//		string tenHang = item.SubItems[1].Text.ToLower();
-		//		if (maHang.Contains(searchText) || tenHang.Contains(searchText))
-		//		{
-		//			ketQuaTimKiem.Add(item);
-		//		}
-		//	}
-		//	lvDS.Items.Clear();
-		//	foreach (ListViewItem resultItem in ketQuaTimKiem)
-		//	{
-		//		lvDS.Items.Add(resultItem);
-		//	}
-		//	if (ketQuaTimKiem.Count == 0)
-		//	{
-		//		MessageBox.Show("Không tìm thấy kết quả phù hợp!", "Thông báo",
-		//			MessageBoxButtons.OK, MessageBoxIcon.Information);
-		//	}
-		//}
-		//List<SanPham> GroupData(List<SanPham> data)
-		//{
-		//	List<SanPham> groupedData = data
-		//	.GroupBy(item => item.MaSP)  // Nhóm theo thuộc tính Ma
-		//	.Select(group =>
-		//	{
-		//		// Cập nhật SoLuong trong từng đối tượng
-		//		var firstItem = group.First();
-		//		firstItem.SLTon = group.Count(); // Đếm số lượng trong nhóm
-		//		return firstItem;
-		//	}).ToList();
-		//	return groupedData;
-		//}
-		//void TimKiem(string keyword)
-		//{
-		//	string searchText = keyword.Trim().ToLower();
-		//	List<ListViewItem> ketQuaTimKiem = new List<ListViewItem>();
-		//	if (string.IsNullOrEmpty(searchText))
-		//	{
-		//		lvDS.Items.Clear();
-		//		LoadSanPhamToListView();
-		//		return;
-		//	}
-		//	foreach (ListViewItem item in lvDS.Items)
-		//	{
-		//		string maHang = item.SubItems[0].Text.ToLower();
-		//		string tenHang = item.SubItems[1].Text.ToLower();
-		//		string tenMau = item.SubItems[4].Text.ToLower();
-		//		if (maHang.Contains(searchText) || tenHang.Contains(searchText) || tenMau.Contains(searchText))
-		//		{
-		//			ketQuaTimKiem.Add(item);
-		//		}
-		//	}
-		//	lvDS.Items.Clear();
-		//	foreach (ListViewItem resultItem in ketQuaTimKiem)
-		//	{
-		//		lvDS.Items.Add(resultItem);
-		//	}
-		//	if (ketQuaTimKiem.Count == 0)
-		//	{
-		//		LoadSanPhamToListView();
-		//	}
 
-
-		//}
 		void TimKiem(List<SanPham> KetQua)
 		{
 
@@ -250,7 +179,7 @@ namespace quan_ly_shop_quan_ao
 		float TongTienHang()
 		{
 			float tongTienHang = listDonHang.Sum(x => x.GiaBan * x.SLTon - x.GiaBan * x.SLTon * x.GiamGia / 100);
-			txtTongTienHang.Text = tongTienHang.ToString("F0");
+			txtTongTienHang.Text = tongTienHang.ToString("N0");
 			return tongTienHang;
 
 		}
@@ -264,8 +193,8 @@ namespace quan_ly_shop_quan_ao
 			float tongThanhToan = tongTienHang + phiGiaoHang + tongTienHang * thueVat / 100 -
 				tongTienHang * giamGia / 100;
 
-			txtTongThanhToan.Text = tongThanhToan.ToString("F0");
-			lbl_Tongtien.Text = tongThanhToan.ToString("F0");
+			txtTongThanhToan.Text = tongThanhToan.ToString("N0");
+			lbl_Tongtien.Text = tongThanhToan.ToString("N0");
 		}
 		string ktKhachHang(string hoten)
 		{
@@ -341,8 +270,24 @@ namespace quan_ly_shop_quan_ao
 				ChiTietHoaDonBL chiTietHoaDonBL = new ChiTietHoaDonBL();
 				string s = chiTietHoaDonBL.Insert(chiTietHoaDon);
 				Debug.WriteLine(s);
+				UpdateSanPham(sp.MaSP, sp.SLTon);
 			}
 		}
+		void UpdateSanPham(string maSP, int SLBan)
+		{
+			SanPhamBL sanPhamBL = new SanPhamBL();
+			listSanPham = sanPhamBL.GetAll();
+			foreach (SanPham sp in listSanPham)
+			{
+				if (sp.MaSP.Contains(maSP))
+				{
+					sp.SLTon = sp.SLTon - SLBan;
+					sanPhamBL.Update(sp);
+				}
+			}
+
+		}
+		
 		private void btnLuuIn_Click(object sender, EventArgs e)
 		{
 			if (listDonHang.Count < 1)
@@ -350,19 +295,20 @@ namespace quan_ly_shop_quan_ao
 				MessageBox.Show("Chưa có mặt hàng nào!");
 				return;
 			}
+
 			string maHD = ThemHoaDon();
 			ThemChiTietHoaDon(maHD);
 			if (!string.IsNullOrEmpty(maHD))
 			{
 				MessageBox.Show("Hóa đơn đã được lưu ");
+
 				ClearForm();
 				InHoaDon inHoaDon = new InHoaDon(maHD);
 				inHoaDon.ShowDialog();
 			}
-			
 
-			
 		}
+
 		void DeleteSanPham_TheoMa(List<SanPham> listSP, string MaSP)
 		{
 			for (int i = listSP.Count - 1; i >= 0; i--)
@@ -406,8 +352,8 @@ namespace quan_ly_shop_quan_ao
 				{
 					if (sp2.MaSP.Contains(s))
 					{
-						sp2.SLTon = int.Parse(soluong);
-
+						if ( int.Parse(soluong) <= listSanPham.Find(x => x.MaSP == sp2.MaSP).SLTon)
+							sp2.SLTon = int.Parse(soluong);
 
 						LoadlvDonHang(listDonHang);
 						TongHoaDon();
@@ -420,12 +366,16 @@ namespace quan_ly_shop_quan_ao
 				{
 					if (sp.MaSP.Contains(s))
 					{
-						sp.SLTon = int.Parse(soluong);
+						if (listSanPham.Find(x => x.MaSP == sp.MaSP).SLTon > 0
+							&& int.Parse(soluong) <= listSanPham.Find(x => x.MaSP == sp.MaSP).SLTon)
+						{
+							sp.SLTon = int.Parse(soluong);
 
 
-						listDonHang.Add(sp);
-						LoadlvDonHang(listDonHang);
-						TongHoaDon();
+							listDonHang.Add(sp);
+							LoadlvDonHang(listDonHang);
+							TongHoaDon();
+						}
 						return;
 					}
 
@@ -443,7 +393,8 @@ namespace quan_ly_shop_quan_ao
 		}
 		private void listView1_DoubleClick(object sender, EventArgs e)
 		{
-
+			SanPhamBL sanPhamBL = new SanPhamBL();
+			listSanPham = sanPhamBL.GetAll();
 			if (lvDS.SelectedItems.Count > 0)
 			{
 				ListViewItem Item1 = lvDS.SelectedItems[0];
@@ -452,6 +403,7 @@ namespace quan_ly_shop_quan_ao
 				{
 					if (sp2.MaSP.Contains(s))
 					{
+						if( sp2.SLTon< listSanPham.Find(x => x.MaSP == sp2.MaSP).SLTon)	
 						sp2.SLTon++;
 
 						LoadlvDonHang(listDonHang);
@@ -465,12 +417,14 @@ namespace quan_ly_shop_quan_ao
 				{
 					if (sp.MaSP.Contains(s))
 					{
-						sp.SLTon = 1;
+						if (listSanPham.Find(x => x.MaSP == sp.MaSP).SLTon > 0)
+						{
+							sp.SLTon = 1;
 
-						listDonHang.Add(sp);
-						LoadlvDonHang(listDonHang);
-						TongHoaDon();
-
+							listDonHang.Add(sp);
+							LoadlvDonHang(listDonHang);
+							TongHoaDon();
+						}
 						return;
 					}
 
@@ -497,7 +451,7 @@ namespace quan_ly_shop_quan_ao
 		}
 		private void btnLoadDon_Click(object sender, EventArgs e)
 		{
-			
+
 			MessageBox.Show(MaNhanVienFormShop);
 			//formDangNhap formDangNhap = new formDangNhap();
 			//string s= MaNhanVienFormShop;
@@ -519,7 +473,7 @@ namespace quan_ly_shop_quan_ao
 					}
 
 				}
-				
+
 			}
 		}
 		private void txtGiamGia_KeyPress(object sender, KeyPressEventArgs e)
