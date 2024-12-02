@@ -2,6 +2,7 @@
 using Chitietphieunhau;
 using DataAccess.Class;
 using quan_ly_shop_quan_ao;
+using Quan_ly_Shop_Quan_ao_1.Forms;
 using quanlyshopquanao;
 using System;
 using System.Collections.Generic;
@@ -208,6 +209,17 @@ namespace Quan_ly_Shop_Quan_ao_1
 
 		private void button3_Click_1(object sender, EventArgs e)
 		{
+			OpenChildForm(new Xemlaiphieunhaphang(), sender);
+		}
+
+		private void button3_Click_2(object sender, EventArgs e)
+		{
+			OpenChildForm(new FormKhachHang(), sender);
+		}
+
+		private void button4_Click_1(object sender, EventArgs e)
+		{
+			
 			OpenChildForm(new FormQuanLyTaiKhoanNguoiDung(), sender);
 		}
 	}

@@ -212,3 +212,4 @@ C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy\obj\Debug\Quan
 C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy\obj\Debug\Quan_ly_Shop_Quan_ao_1.pdb
 C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy\obj\Debug\Quan_ly_Shop_Quan_ao_1.InHoaDon.resources
 C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy\obj\Debug\Quan_ly_Shop_Quan_ao_1.Forms.UserControl1.resources
+C:\Users\hoang\source\repos\Bai_Tap_Nhom_desktop-2--master - Copy\obj\Debug\Quan_ly_Shop_Quan_ao_1.Forms.FormKhachHang.resources

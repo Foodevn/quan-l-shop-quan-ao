@@ -284,10 +284,8 @@ namespace quan_ly_shop_quan_ao
 			{
 				if (hoten == kh.TenKhachHang.ToLower().Trim())
 				{
-
 					return kh.MaKhachHang;
 				}
-
 			}
 			return khachHangBL.Insert(khachHang);
 		}

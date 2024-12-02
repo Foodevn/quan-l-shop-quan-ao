@@ -18,10 +18,10 @@ namespace Chitietphieunhau
 		List<ChiTietPhieuNhap> listChiTietPhieuNhap;
 		List<NhanVien> listNhanVien;
 		List<SanPham> listSanPham;
-		public string MaHoaDon {  get; set; }
-		public FormChitietphieunhap(string maHoaDon)
+		public string MaPhieuNhap {  get; set; }
+		public FormChitietphieunhap(string maPhieuNhap)
         {
-			MaHoaDon = maHoaDon;
+			MaPhieuNhap = maPhieuNhap;
             InitializeComponent();
         }
 
@@ -47,17 +47,17 @@ namespace Chitietphieunhau
 
 			foreach (PhieuNhapHang phieuNhapHang in listPhieuNhap)
 			{
-				if (phieuNhapHang.MaPhieuNhap.Trim() == MaHoaDon.Trim())
+				if (phieuNhapHang.MaPhieuNhap.Trim() == MaPhieuNhap.Trim())
 				{
 					txtbNgayNhap.Text = phieuNhapHang.NgayNhap.ToString("dd/mm/yyyy");
 					txtbNguoiNhap.Text = listNhanVien.Find(x => x.MaNhanVien == phieuNhapHang.MaNhanVien).HoTen;
 					txtbNguonHang.Text = phieuNhapHang.NguonHang;
-					txtbChiPhiShip.Text = phieuNhapHang.PhiVanChuyen.ToString("F0");
+					txtbChiPhiShip.Text = phieuNhapHang.PhiVanChuyen.ToString("N0");
 					txtbTienThue.Text = phieuNhapHang.ThueVat.ToString("F2");
 					txtbChiPhiKhac.Text=phieuNhapHang.CacPhiKhac.ToString("F2");
 					txtbGhiChuKhac.Text = phieuNhapHang.GhiChu;
 					labelTongSoLuong.Text = listChiTietPhieuNhap.Count(x => x.MaPhieuNhap == phieuNhapHang.MaPhieuNhap).ToString();
-					labelTongTienHang.Text =phieuNhapHang.TongTienHang.ToString("F0");
+					labelTongTienHang.Text =phieuNhapHang.TongTienHang.ToString("N0");
 					labelTongChiPhiNhapHang.Text =(phieuNhapHang.CacPhiKhac+phieuNhapHang.PhiVanChuyen+phieuNhapHang.ThueVat* phieuNhapHang.TongTienHang/100).ToString("F2");
 					return;
 				}
@@ -72,7 +72,7 @@ namespace Chitietphieunhau
 			foreach (ChiTietPhieuNhap CT in listChiTietPhieuNhap)
 			{
 				
-				if (CT.MaPhieuNhap == MaHoaDon)
+				if (CT.MaPhieuNhap == MaPhieuNhap)
 				{
 					ListViewItem item = lvChiTietDanhSachNhap.Items.Add(count.ToString());
 					item.SubItems.Add(CT.MaPhieuNhap);

@@ -138,7 +138,7 @@ namespace XemLaiHoaDon
 		void TinhTong(List<HoaDon> listHD)
 		{
 			lblTongDoanhThu.Text = listHD.Sum(hd => hd.TongTien - hd.TongTien * hd.GiamGiaHD
-			/ 100 + hd.PhiShip + hd.Vat * hd.TongTien / 100).ToString();
+			/ 100 + hd.PhiShip + hd.Vat * hd.TongTien / 100).ToString("N0");
 		}
 		private void FrmXemLaiHoaDon_Load(object sender, EventArgs e)
 		{

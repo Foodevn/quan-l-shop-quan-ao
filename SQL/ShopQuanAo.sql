@@ -632,16 +632,17 @@ exec NhomMatHang_InsertUpdateDelete 'THL',N'thắt lưng',1,0;
 select * from NhomMatHang
 --INSERT INTO SanPham (MaSP, TenSP, GiaBan, SLTon, NhaCungCap, IDMau, IDSize,IDNhomMatHang, GhiChu, Enable)
 --VALUES 
-exec SanPham_InsertUpdateDelete '', N'Áo Thun', 200000, 0.0,190000,100,'Nike', 'MS0001', 'S0001','AOT','', N'Áo thun nam', 1,0;
-exec SanPham_InsertUpdateDelete '', N'Áo Khoác', 500000,0.0,490000, 50,'gucci', 'MS0002', 'S0002','AOK','', N'Áo khoác nữ', 1,0;
-exec SanPham_InsertUpdateDelete '', N'Quần Jean', 300000,0.0,290000, 70,'gucci', 'MS0003', 'S0003','QUA','', N'Quần jean xanh', 1,0;
-exec SanPham_InsertUpdateDelete '', N'Giày Sneaker', 700000,0.0,790000, 40,'Nike', 'MS0004', 'S0004','GIA','', N'Giày thể thao', 1,0;
-exec SanPham_InsertUpdateDelete '', N'Túi Xách', 250000,9.99,240000, 90,'gucci', 'MS0005', 'S0005','TUI','', N'Túi xách nữ', 1,0;
+exec SanPham_InsertUpdateDelete '', N'Áo Thun', 200000, 0.2      ,190000,100,'Nike', 'MS0001', 'S0001','AOT','', N'Áo thun nam', 1,0;
+exec SanPham_InsertUpdateDelete '', N'Áo Thun', 200000, 0.2      ,190000,100,'Nike', 'MS0001', 'S0001','AOT','', N'Áo thun nam', 1,0;
+exec SanPham_InsertUpdateDelete '', N'Áo Khoác', 500000,0.0      ,490000, 50,'gucci', 'MS0002', 'S0002','AOK','', N'Áo khoác nữ', 1,0;
+exec SanPham_InsertUpdateDelete '', N'Quần Jean', 300000,0.0     ,290000, 70,'gucci', 'MS0003', 'S0003','QUA','', N'Quần jean xanh', 1,0;
+exec SanPham_InsertUpdateDelete '', N'Giày Sneaker', 700000,0.0  ,790000, 40,'Nike', 'MS0004', 'S0004','GIA','', N'Giày thể thao', 1,0;
+exec SanPham_InsertUpdateDelete '', N'Túi Xách', 250000,9.99     ,240000, 90,'gucci', 'MS0005', 'S0005','TUI','', N'Túi xách nữ', 1,0;
 exec SanPham_InsertUpdateDelete '', N'Nón Lưỡi Trai', 150000, 0.0,140000,150,'Nike', 'MS0006', 'S0006','NON','', N'Nón thời trang', 1,0;
-exec SanPham_InsertUpdateDelete '', N'Váy Dạ Hội', 900000,0.0,800000, 30,'Nike', 'MS0007', 'S0007','VAY','', N'Váy nữ cao cấp', 1,0;
-exec SanPham_InsertUpdateDelete '', N'Thắt Lưng', 120000,0.0,110000, 90,'gucci', 'MS0008', 'S0008','THL','', N'Thắt lưng da', 1,0;
-exec SanPham_InsertUpdateDelete '', N'Áo Sơ Mi', 350000,10.1,340000, 60,'gucci', 'MS0009', 'S0009','ASM','', N'Áo sơ mi trắng', 1,0;
-exec SanPham_InsertUpdateDelete '', N'Giày Cao Gót', 450000,0.0,440000, 45,'gucci', 'MS0010', 'S0010','GIA','', N'Giày nữ cao gót', 1,0;
+exec SanPham_InsertUpdateDelete '', N'Váy Dạ Hội', 900000,0.0    ,800000, 30,'Nike', 'MS0007', 'S0007','VAY','', N'Váy nữ cao cấp', 1,0;
+exec SanPham_InsertUpdateDelete '', N'Thắt Lưng', 120000,0.0     ,110000 , 90,'gucci', 'MS0008', 'S0008','THL','', N'Thắt lưng da', 1,0;
+exec SanPham_InsertUpdateDelete '', N'Áo Sơ Mi', 350000,10.1     ,340000 , 60,'gucci', 'MS0009', 'S0009','ASM','', N'Áo sơ mi trắng', 1,0;
+exec SanPham_InsertUpdateDelete '', N'Giày Cao Gót', 450000,0.0  ,440000 , 45,'gucci', 'MS0010', 'S0010','GIA','', N'Giày nữ cao gót', 1,1;
 
 select * from SanPham
 --INSERT INTO KhachHang (MaKhachHang, TenKhachHang, DiaChi, SDT, Enable)
@@ -749,7 +750,6 @@ select * from NhomMatHang
 select * from NhanVien
 select * from Role
 select * from RoleNhanVien
-
 go
 
 

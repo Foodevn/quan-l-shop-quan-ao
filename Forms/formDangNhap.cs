@@ -50,10 +50,6 @@ namespace Quan_ly_Shop_Quan_ao_1
 			MessageBox.Show("Tên tài khoản hoặc mật khẩu chưa đúng!");
 
 		}
-		public string test()
-		{
-			return "NV0001"; 
-		}
 
 		private void btnThoat_Click(object sender, EventArgs e)
 		{
@@ -63,8 +59,8 @@ namespace Quan_ly_Shop_Quan_ao_1
 		private void formDangNhap_Load(object sender, EventArgs e)
 		{
 			
-			this.KeyPreview = true;
-			this.AcceptButton = btnDangNhap;
+			
+			
 		}
 
 		private void formDangNhap_FormClosing(object sender, FormClosingEventArgs e)

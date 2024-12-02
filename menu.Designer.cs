@@ -30,6 +30,7 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menu));
 			this.panelMenu = new System.Windows.Forms.Panel();
+			this.buttonQuanLyNhanVien = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.btnNhapHang = new System.Windows.Forms.Button();
@@ -44,7 +45,8 @@
 			this.btnCloseChildForm = new System.Windows.Forms.Button();
 			this.lblTitle = new System.Windows.Forms.Label();
 			this.panelDesktop = new System.Windows.Forms.Panel();
-			this.buttonQuanLyNhanVien = new System.Windows.Forms.Button();
+			this.button3 = new System.Windows.Forms.Button();
+			this.button4 = new System.Windows.Forms.Button();
 			this.panelMenu.SuspendLayout();
 			this.panelLogo.SuspendLayout();
 			this.panelTitleBar.SuspendLayout();
@@ -53,6 +55,8 @@
 			// panelMenu
 			// 
 			this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+			this.panelMenu.Controls.Add(this.button4);
+			this.panelMenu.Controls.Add(this.button3);
 			this.panelMenu.Controls.Add(this.buttonQuanLyNhanVien);
 			this.panelMenu.Controls.Add(this.button2);
 			this.panelMenu.Controls.Add(this.button1);
@@ -67,6 +71,26 @@
 			this.panelMenu.Name = "panelMenu";
 			this.panelMenu.Size = new System.Drawing.Size(248, 740);
 			this.panelMenu.TabIndex = 0;
+			// 
+			// buttonQuanLyNhanVien
+			// 
+			this.buttonQuanLyNhanVien.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.buttonQuanLyNhanVien.BackColor = System.Drawing.Color.Transparent;
+			this.buttonQuanLyNhanVien.FlatAppearance.BorderSize = 0;
+			this.buttonQuanLyNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonQuanLyNhanVien.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.buttonQuanLyNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("buttonQuanLyNhanVien.Image")));
+			this.buttonQuanLyNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.buttonQuanLyNhanVien.Location = new System.Drawing.Point(0, 344);
+			this.buttonQuanLyNhanVien.Name = "buttonQuanLyNhanVien";
+			this.buttonQuanLyNhanVien.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+			this.buttonQuanLyNhanVien.Size = new System.Drawing.Size(248, 52);
+			this.buttonQuanLyNhanVien.TabIndex = 11;
+			this.buttonQuanLyNhanVien.Text = "     Xem Lại Phiếu Nhập";
+			this.buttonQuanLyNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.buttonQuanLyNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.buttonQuanLyNhanVien.UseVisualStyleBackColor = false;
+			this.buttonQuanLyNhanVien.Click += new System.EventHandler(this.button3_Click_1);
 			// 
 			// button2
 			// 
@@ -294,25 +318,45 @@
 			this.panelDesktop.Size = new System.Drawing.Size(1090, 660);
 			this.panelDesktop.TabIndex = 2;
 			// 
-			// buttonQuanLyNhanVien
+			// button3
 			// 
-			this.buttonQuanLyNhanVien.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.buttonQuanLyNhanVien.BackColor = System.Drawing.Color.Transparent;
-			this.buttonQuanLyNhanVien.FlatAppearance.BorderSize = 0;
-			this.buttonQuanLyNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.buttonQuanLyNhanVien.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.buttonQuanLyNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("buttonQuanLyNhanVien.Image")));
-			this.buttonQuanLyNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.buttonQuanLyNhanVien.Location = new System.Drawing.Point(0, 344);
-			this.buttonQuanLyNhanVien.Name = "buttonQuanLyNhanVien";
-			this.buttonQuanLyNhanVien.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-			this.buttonQuanLyNhanVien.Size = new System.Drawing.Size(248, 52);
-			this.buttonQuanLyNhanVien.TabIndex = 11;
-			this.buttonQuanLyNhanVien.Text = "     Quản lý Nhân Viên";
-			this.buttonQuanLyNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.buttonQuanLyNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.buttonQuanLyNhanVien.UseVisualStyleBackColor = false;
-			this.buttonQuanLyNhanVien.Click += new System.EventHandler(this.button3_Click_1);
+			this.button3.BackColor = System.Drawing.Color.Transparent;
+			this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+			this.button3.FlatAppearance.BorderSize = 0;
+			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+			this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button3.Location = new System.Drawing.Point(0, 444);
+			this.button3.Name = "button3";
+			this.button3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+			this.button3.Size = new System.Drawing.Size(248, 52);
+			this.button3.TabIndex = 12;
+			this.button3.Text = "     Khách Hàng";
+			this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button3.UseVisualStyleBackColor = false;
+			this.button3.Click += new System.EventHandler(this.button3_Click_2);
+			// 
+			// button4
+			// 
+			this.button4.BackColor = System.Drawing.Color.Transparent;
+			this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+			this.button4.FlatAppearance.BorderSize = 0;
+			this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+			this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button4.Location = new System.Drawing.Point(0, 496);
+			this.button4.Name = "button4";
+			this.button4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+			this.button4.Size = new System.Drawing.Size(248, 52);
+			this.button4.TabIndex = 13;
+			this.button4.Text = "     Quản Lý Tài Khoản";
+			this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button4.UseVisualStyleBackColor = false;
+			this.button4.Click += new System.EventHandler(this.button4_Click_1);
 			// 
 			// menu
 			// 
@@ -355,5 +399,7 @@
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button buttonQuanLyNhanVien;
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button button4;
 	}
 }

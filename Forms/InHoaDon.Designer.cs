@@ -213,7 +213,7 @@
 			// 
 			this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-			this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 281);
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(28, 281);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
 			this.flowLayoutPanel1.Size = new System.Drawing.Size(804, 49);
 			this.flowLayoutPanel1.TabIndex = 23;
