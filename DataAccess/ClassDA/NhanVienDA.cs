@@ -29,8 +29,23 @@ namespace DataAccess.ClassDA
 				nhanVien.MaNhanVien = reader["MaNhanVien"].ToString();
 				nhanVien.MatKhau = reader["MatKhau"].ToString();
 				nhanVien.HoTen = reader["HoTen"].ToString();
+				nhanVien.NgaySinh = Convert.ToDateTime(reader["NgaySinh"]);
+				nhanVien.CCCD = reader["CCCD"].ToString();
+			
 				nhanVien.Email = reader["Email"].ToString();
-				nhanVien.SDT = Convert.ToInt32( reader["SDT"]);
+				nhanVien.SDT = ( reader["SDT"]).ToString();
+				nhanVien.NgayVaoLam = Convert.ToDateTime(reader["NgayVaoLam"]);
+				
+				if(reader["NgayThoiViec"]!=DBNull.Value)
+				{
+					nhanVien.NgayThoiViec = Convert.ToDateTime(reader["NgayThoiViec"]);
+				}
+				else
+				{
+					nhanVien.NgayThoiViec = new DateTime(1001,1,1);
+				}
+				nhanVien.GhiChu = reader["GhiChu"].ToString();
+
 				nhanVien.Enable = Convert.ToInt32(reader["Enable"]);
 				list.Add(nhanVien);
 
@@ -54,9 +69,16 @@ namespace DataAccess.ClassDA
 			command.Parameters.Add(IDPara).Value = nhanVien.MaNhanVien;
 			command.Parameters.Add("@MatKhau", SqlDbType.Char,100).Value = nhanVien.MatKhau;
 			command.Parameters.Add("@HoTen", SqlDbType.NVarChar, 255).Value = nhanVien.HoTen;
+			command.Parameters.Add("@NgaySinh", SqlDbType.DateTime).Value = nhanVien.NgaySinh;
+			command.Parameters.Add("@CCCD", SqlDbType.Char, 15).Value = nhanVien.CCCD;
+
 			command.Parameters.Add("@Email", SqlDbType.Char, 255).Value = nhanVien.Email;
-			command.Parameters.Add("@SDT", SqlDbType.Int).Value = nhanVien.SDT;
-			command.Parameters.Add("@NgayTao", SqlDbType.DateTime).Value = nhanVien.NgayTao;
+			command.Parameters.Add("@SDT", SqlDbType.Char,13).Value = nhanVien.SDT;
+			command.Parameters.Add("@NgayVaoLam", SqlDbType.DateTime).Value = nhanVien.NgayVaoLam;
+			//command.Parameters.Add("@NgayThoiViec", SqlDbType.DateTime).Value = nhanVien.NgayThoiViec;
+			command.Parameters.Add("@NgayThoiViec", SqlDbType.DateTime).Value = nhanVien.NgayThoiViec ?? (object)DBNull.Value;
+			command.Parameters.Add("@GhiChu", SqlDbType.Char, 255).Value = nhanVien.GhiChu;
+
 			command.Parameters.Add("@Enable", SqlDbType.Int).Value = nhanVien.Enable;
 			command.Parameters.Add("@Action", SqlDbType.Int).Value = action;
 

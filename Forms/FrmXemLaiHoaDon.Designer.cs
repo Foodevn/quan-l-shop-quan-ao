@@ -118,7 +118,7 @@
 			this.dtpNgayLap.Name = "dtpNgayLap";
 			this.dtpNgayLap.Size = new System.Drawing.Size(111, 22);
 			this.dtpNgayLap.TabIndex = 1;
-			this.dtpNgayLap.Value = new System.DateTime(2024, 9, 8, 0, 0, 0, 0);
+			this.dtpNgayLap.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
 			// 
 			// dtpNgayDen
 			// 

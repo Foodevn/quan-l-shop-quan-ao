@@ -54,7 +54,6 @@
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.cbbTrangThai = new System.Windows.Forms.ComboBox();
 			this.lbl_Tongtien = new System.Windows.Forms.Label();
-			this.btnLoadDon = new System.Windows.Forms.Button();
 			this.btnLuuIn = new System.Windows.Forms.Button();
 			this.btnHuyBo = new System.Windows.Forms.Button();
 			this.txtGhiChu = new System.Windows.Forms.TextBox();
@@ -139,7 +138,7 @@
 			this.lvDS.HideSelection = false;
 			this.lvDS.Location = new System.Drawing.Point(9, 115);
 			this.lvDS.Name = "lvDS";
-			this.lvDS.Size = new System.Drawing.Size(427, 531);
+			this.lvDS.Size = new System.Drawing.Size(427, 544);
 			this.lvDS.TabIndex = 6;
 			this.lvDS.UseCompatibleStateImageBehavior = false;
 			this.lvDS.View = System.Windows.Forms.View.Details;
@@ -175,12 +174,12 @@
 			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sốLượngToolStripMenuItem});
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(211, 56);
+			this.contextMenuStrip1.Size = new System.Drawing.Size(139, 28);
 			// 
 			// sốLượngToolStripMenuItem
 			// 
 			this.sốLượngToolStripMenuItem.Name = "sốLượngToolStripMenuItem";
-			this.sốLượngToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+			this.sốLượngToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
 			this.sốLượngToolStripMenuItem.Text = "Số lượng";
 			this.sốLượngToolStripMenuItem.Click += new System.EventHandler(this.sốLượngToolStripMenuItem_Click);
 			// 
@@ -265,7 +264,6 @@
 			this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBox3.Controls.Add(this.cbbTrangThai);
 			this.groupBox3.Controls.Add(this.lbl_Tongtien);
-			this.groupBox3.Controls.Add(this.btnLoadDon);
 			this.groupBox3.Controls.Add(this.btnLuuIn);
 			this.groupBox3.Controls.Add(this.btnHuyBo);
 			this.groupBox3.Controls.Add(this.txtGhiChu);
@@ -312,17 +310,6 @@
 			this.lbl_Tongtien.Size = new System.Drawing.Size(90, 16);
 			this.lbl_Tongtien.TabIndex = 4;
 			this.lbl_Tongtien.Text = "Không Đồng";
-			// 
-			// btnLoadDon
-			// 
-			this.btnLoadDon.BackColor = System.Drawing.SystemColors.Control;
-			this.btnLoadDon.Location = new System.Drawing.Point(482, 210);
-			this.btnLoadDon.Name = "btnLoadDon";
-			this.btnLoadDon.Size = new System.Drawing.Size(90, 23);
-			this.btnLoadDon.TabIndex = 3;
-			this.btnLoadDon.Text = "Load đơn";
-			this.btnLoadDon.UseVisualStyleBackColor = false;
-			this.btnLoadDon.Click += new System.EventHandler(this.btnLoadDon_Click);
 			// 
 			// btnLuuIn
 			// 
@@ -702,7 +689,6 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.Button btnLoadDon;
 		private System.Windows.Forms.ComboBox cbbTrangThai;
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.ColumnHeader columnHeader3;

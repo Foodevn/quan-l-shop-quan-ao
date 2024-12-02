@@ -25,29 +25,35 @@ namespace XemLaiHoaDon
 		}
 		void LoadHoaDontoLV(List<HoaDon> listHoaDon)
 		{
+			DateTime fromDate = dtpNgayLap.Value.Date;
+			DateTime toDate = dtpNgayDen.Value.Date;
+			var validHoaDonIds = listHoaDon
+			  .Where(p => p.NgayLap >= fromDate && p.NgayLap <= toDate)
+			  .ToList();
 			lvDSHoaDon.Items.Clear();
-			foreach (HoaDon hd in listHoaDon)
+			foreach (HoaDon hd in validHoaDonIds)
 			{
 				ListViewItem item = lvDSHoaDon.Items.Add(hd.MaHoaDon);
 				string tenNhanVien = listNhanVien.Find(x => x.MaNhanVien == hd.MaNV).HoTen;
 				item.SubItems.Add(tenNhanVien);
-				item.SubItems.Add(hd.NgayLap.ToString("dd/mm/yyyy"));
+				item.SubItems.Add(hd.NgayLap.ToString("dd/MM/yyyy"));
 				string tenKhachHang = listKhachHang.Find(x => x.MaKhachHang == hd.MaKH).TenKhachHang;
 
 				item.SubItems.Add(tenKhachHang);
 				string sdt = listKhachHang.Find(x => x.MaKhachHang == hd.MaKH).SDT;
 				item.SubItems.Add(sdt);
-				item.SubItems.Add(hd.TongTien.ToString("F0"));
+				item.SubItems.Add(hd.TongTien.ToString("N0"));
 				item.SubItems.Add(hd.GiamGiaHD.ToString("F2"));
 				item.SubItems.Add(hd.PhiShip.ToString("F0"));
 				item.SubItems.Add(hd.Vat.ToString("F2"));
 				float thanhTien = hd.TongTien - hd.TongTien * hd.GiamGiaHD / 100 + hd.PhiShip + hd.Vat * hd.TongTien / 100;
 				item.SubItems.Add(thanhTien.ToString("F0"));
 				item.SubItems.Add(hd.TrangThai);
-
-
-
 			}
+		}
+		private void DateTimePicker_ValueChanged(object sender, EventArgs e)
+		{
+			LoadHoaDontoLV(listHoaDon);
 		}
 		void LoadNhanVientoCBB(List<NhanVien> listNhanVien)
 		{
@@ -102,8 +108,8 @@ namespace XemLaiHoaDon
 			List<HoaDon> listHD = new List<HoaDon>();
 			foreach (HoaDon hd in listHoaDon)
 			{
-				string maNhanVien=hd.MaNV.Trim();
-				if(maNhanVien.Contains(s))
+				string maNhanVien = hd.MaNV.Trim();
+				if (maNhanVien.Contains(s))
 				{
 					listHD.Add(hd);
 				}
@@ -113,15 +119,15 @@ namespace XemLaiHoaDon
 		List<HoaDon> TimKiem_TrangThai(bool s)
 		{
 			string ktra = "C";
-			if(s)
+			if (s)
 			{
 				ktra = "ã";
 			}
-			
+
 			List<HoaDon> listHD = new List<HoaDon>();
 			foreach (HoaDon hd in listHoaDon)
 			{
-				
+
 				if (hd.TrangThai.Contains(ktra))
 				{
 					listHD.Add(hd);
@@ -144,9 +150,11 @@ namespace XemLaiHoaDon
 
 			KhachHangBL khachHangBL = new KhachHangBL();
 			listKhachHang = khachHangBL.GetAll();
-
+			dtpNgayLap.ValueChanged += DateTimePicker_ValueChanged;
+			dtpNgayDen.ValueChanged += DateTimePicker_ValueChanged;
 			LoadNhanVientoCBB(listNhanVien);
 			LoadHoaDontoLV(listHoaDon);
+			
 
 
 		}
@@ -168,10 +176,10 @@ namespace XemLaiHoaDon
 
 		private void cbTrangThai_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			bool ktra=false;
-			if(cbTrangThai.Text== "Hoàn Thành")
+			bool ktra = false;
+			if (cbTrangThai.Text == "Hoàn Thành")
 			{
-				ktra=true;
+				ktra = true;
 			}
 			Debug.Write(ktra);
 			LoadHoaDontoLV(TimKiem_TrangThai(ktra));
@@ -180,7 +188,7 @@ namespace XemLaiHoaDon
 
 		private void cbNhanVienLap_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			
+
 			string key = cbNhanVienLap.SelectedValue.ToString();
 			LoadHoaDontoLV(TimKiem_NhanVien(key));
 			TinhTong(TimKiem_NhanVien(key));

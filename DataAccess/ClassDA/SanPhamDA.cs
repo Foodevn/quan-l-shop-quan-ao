@@ -33,7 +33,9 @@ namespace DataAccess.ClassDA
                 sanPham.IDMau = reader["IDMau"].ToString();
                 sanPham.IDSize = reader["IDSize"].ToString();
                 sanPham.IDNhomMatHang = reader["IDNhomMatHang"].ToString();
-                sanPham.GhiChu = reader["GhiChu"].ToString();
+				sanPham.PathImage = reader["PathImage"].ToString();
+				sanPham.GhiChu = reader["GhiChu"].ToString();
+              
                 sanPham.Enable = Convert.ToInt32(reader["Enable"]);
                 list.Add(sanPham);
             }
@@ -62,6 +64,7 @@ namespace DataAccess.ClassDA
             command.Parameters.Add("@IDMau", SqlDbType.NVarChar, 10).Value = sanPham.IDMau;
             command.Parameters.Add("@IDSize", SqlDbType.NVarChar, 10).Value = sanPham.IDSize;
             command.Parameters.Add("@IDNhomMatHang", SqlDbType.NVarChar, 3).Value = sanPham.IDNhomMatHang;
+            command.Parameters.Add("@PathImage", SqlDbType.NVarChar, 300).Value = sanPham.PathImage;
             command.Parameters.Add("@GhiChu", SqlDbType.NVarChar, 100).Value = sanPham.GhiChu;
             command.Parameters.Add("@Enable", SqlDbType.Int).Value = sanPham.Enable;
             command.Parameters.Add("@Action", SqlDbType.Int).Value = action;

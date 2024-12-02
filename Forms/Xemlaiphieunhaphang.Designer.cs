@@ -103,6 +103,7 @@
 			this.dtpFromDate.Name = "dtpFromDate";
 			this.dtpFromDate.Size = new System.Drawing.Size(102, 22);
 			this.dtpFromDate.TabIndex = 3;
+			this.dtpFromDate.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
 			// 
 			// label2
 			// 

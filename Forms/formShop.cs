@@ -94,11 +94,11 @@ namespace quan_ly_shop_quan_ao
 			{
 				ListViewItem item = lvChiTietDonhang.Items.Add(sp.MaSP);
 				item.SubItems.Add(sp.TenSP);
-				item.SubItems.Add(sp.GiaBan.ToString("F0"));
+				item.SubItems.Add(sp.GiaBan.ToString("N0"));
 				item.SubItems.Add(sp.GiamGia.ToString());
 				item.SubItems.Add(sp.SLTon.ToString());
 				float thanhTien = sp.SLTon * sp.GiaBan - (sp.SLTon * sp.GiaBan) * sp.GiamGia / 100;
-				item.SubItems.Add(thanhTien.ToString("F0"));
+				item.SubItems.Add(thanhTien.ToString("N0"));
 			}
 			lvChiTietDonhang.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 		}
@@ -116,6 +116,7 @@ namespace quan_ly_shop_quan_ao
 			txtGiamGia.Text = "";
 			txtThueVAT.Text = "";
 			lbl_Tongtien.Text = "Không Đồng";
+			listDonHang.Clear();
 		}
 		//private void btnTimKiem_Click(object sender, EventArgs e)
 		//{
@@ -357,7 +358,11 @@ namespace quan_ly_shop_quan_ao
 			{
 				MessageBox.Show("Hóa đơn đã được lưu ");
 				ClearForm();
+				InHoaDon inHoaDon = new InHoaDon(maHD);
+				inHoaDon.ShowDialog();
 			}
+			
+
 			
 		}
 		void DeleteSanPham_TheoMa(List<SanPham> listSP, string MaSP)

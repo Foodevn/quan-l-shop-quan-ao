@@ -18,6 +18,7 @@ namespace DataAccess
 		public string IDMau { get; set; }
 		public string IDSize { get; set; }
 		public string IDNhomMatHang { get; set; }
+		public string PathImage {  get; set; }
 		public string GhiChu { get; set; }
 		public int Enable { get; set; }
 	}

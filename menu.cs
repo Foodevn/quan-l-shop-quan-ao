@@ -78,7 +78,7 @@ namespace Quan_ly_Shop_Quan_ao_1
 					if (roleNhanVien.MaRole.Trim() == "003")
 					{
 						btnDSSanPham.Visible = false;
-						
+						buttonQuanLyNhanVien.Visible=false;
 						btnDoanhThu.Visible = false;
 						btnNhapHang.Visible = false;
 					}
@@ -204,6 +204,11 @@ namespace Quan_ly_Shop_Quan_ao_1
 		private void button2_Click_1(object sender, EventArgs e)
 		{
 			OpenChildForm(new FormDanhMucHangSapHet(), sender);
+		}
+
+		private void button3_Click_1(object sender, EventArgs e)
+		{
+			OpenChildForm(new FormQuanLyTaiKhoanNguoiDung(), sender);
 		}
 	}
 }

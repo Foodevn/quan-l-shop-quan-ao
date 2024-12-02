@@ -122,8 +122,10 @@ namespace quanlyshopquanao
                     cbbMau.SelectedIndex = listMauSac.FindIndex(x => x.MaMau == sp.IDMau);
                     cbbSize.SelectedIndex = listSize.FindIndex(x => x.MaSize == sp.IDSize);
                     cbbNhomMatHang.SelectedIndex = listNhomMatHang.FindIndex(x => x.MaNhomMatHang == sp.IDNhomMatHang);
-
-                }
+                    if(sp.PathImage.Trim()!="")
+					pbHinh.Image = Image.FromFile(sp.PathImage.Trim());
+                    txtImage.Text = sp.PathImage;
+				}
             }
 
 
@@ -132,19 +134,23 @@ namespace quanlyshopquanao
 
         private void button4_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-                openFileDialog.Title = "Select an Image";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    txtImage.Text = openFileDialog.FileName;
+            loadImage();
 
-                    pbHinh.Image=Image.FromFile(openFileDialog.FileName);
-                }
-            }
-        }
+		}
+        void loadImage()
+        {
+			using (OpenFileDialog openFileDialog = new OpenFileDialog())
+			{
+				openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+				openFileDialog.Title = "Select an Image";
+				if (openFileDialog.ShowDialog() == DialogResult.OK)
+				{
+					txtImage.Text = openFileDialog.FileName;
 
+					pbHinh.Image = Image.FromFile(openFileDialog.FileName);
+				}
+			}
+		}
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
 
@@ -179,6 +185,7 @@ namespace quanlyshopquanao
                 NhaCungCap = txtNCC.Text,
                 IDMau = cbbMau.SelectedValue.ToString().Trim(),
                 IDSize = cbbSize.SelectedValue.ToString().Trim(),
+                PathImage=txtImage.Text,
                 GhiChu = txtMota.Text,
                 Enable = enable,
             };
@@ -217,6 +224,7 @@ namespace quanlyshopquanao
                 sanpham.MaSP = MaSP;
                 sanpham.TenSP =txtTen.Text;
                 sanpham.NhaCungCap=txtNCC.Text;
+                sanpham.PathImage = txtImage.Text;
                 sanpham.GhiChu=txtMota.Text;
                 sanpham.IDMau=cbbMau.SelectedValue.ToString().Trim();
                 sanpham.IDSize=cbbSize.SelectedValue.ToString().Trim();

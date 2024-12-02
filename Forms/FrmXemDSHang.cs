@@ -219,6 +219,17 @@ namespace XemLaiHoaDon
 
         }
 
-
-    }
+		private void lvDS_DoubleClick(object sender, EventArgs e)
+		{
+			if (lvDS.SelectedItems.Count > 0)
+			{
+				ListViewItem item = lvDS.SelectedItems[0];
+				string masp = item.SubItems[0].Text;
+				Themmathangmoi themmathangmoi = new Themmathangmoi(masp);
+				themmathangmoi.update = true;
+				themmathangmoi.Show();
+				themmathangmoi.FormClosed += FrmXemDSHang_Load;
+			}
+		}
+	}
 }

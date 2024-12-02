@@ -44,6 +44,7 @@
 			this.btnCloseChildForm = new System.Windows.Forms.Button();
 			this.lblTitle = new System.Windows.Forms.Label();
 			this.panelDesktop = new System.Windows.Forms.Panel();
+			this.buttonQuanLyNhanVien = new System.Windows.Forms.Button();
 			this.panelMenu.SuspendLayout();
 			this.panelLogo.SuspendLayout();
 			this.panelTitleBar.SuspendLayout();
@@ -52,6 +53,7 @@
 			// panelMenu
 			// 
 			this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+			this.panelMenu.Controls.Add(this.buttonQuanLyNhanVien);
 			this.panelMenu.Controls.Add(this.button2);
 			this.panelMenu.Controls.Add(this.button1);
 			this.panelMenu.Controls.Add(this.btnNhapHang);
@@ -292,6 +294,26 @@
 			this.panelDesktop.Size = new System.Drawing.Size(1090, 660);
 			this.panelDesktop.TabIndex = 2;
 			// 
+			// buttonQuanLyNhanVien
+			// 
+			this.buttonQuanLyNhanVien.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.buttonQuanLyNhanVien.BackColor = System.Drawing.Color.Transparent;
+			this.buttonQuanLyNhanVien.FlatAppearance.BorderSize = 0;
+			this.buttonQuanLyNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonQuanLyNhanVien.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.buttonQuanLyNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("buttonQuanLyNhanVien.Image")));
+			this.buttonQuanLyNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.buttonQuanLyNhanVien.Location = new System.Drawing.Point(0, 344);
+			this.buttonQuanLyNhanVien.Name = "buttonQuanLyNhanVien";
+			this.buttonQuanLyNhanVien.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+			this.buttonQuanLyNhanVien.Size = new System.Drawing.Size(248, 52);
+			this.buttonQuanLyNhanVien.TabIndex = 11;
+			this.buttonQuanLyNhanVien.Text = "     Quản lý Nhân Viên";
+			this.buttonQuanLyNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.buttonQuanLyNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.buttonQuanLyNhanVien.UseVisualStyleBackColor = false;
+			this.buttonQuanLyNhanVien.Click += new System.EventHandler(this.button3_Click_1);
+			// 
 			// menu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -332,5 +354,6 @@
 		private System.Windows.Forms.Button btnNhapHang;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button buttonQuanLyNhanVien;
 	}
 }
